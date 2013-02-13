@@ -1,0 +1,5 @@
+(provide 'personal-ids)
+(defvar hc/org-user "matthew")
+(defvar hc/gmail-addr "matthew@webheroes.ca")
+(defvar hc/full-name "Matthew Brisebois")
+(defvar hc/email-addr "matthew@webheroes.ca")
