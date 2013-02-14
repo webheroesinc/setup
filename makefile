@@ -1,5 +1,9 @@
 
-.SILENT: symbolic-links
+.SILENT:	symbolic-links
+.PHONY:		setup symbolic-links
+
+setup:		symbolic-links
+	mkdir -p ~/src/documentation
 
 symbolic-links:
 	test ! -f ~/.screenrc			&& ln -s ~/setup/.screenrc		~/ || echo "You must remove the existing files: ~/.screenrc"
