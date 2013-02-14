@@ -771,14 +771,16 @@ __git_complete_remote_or_refspec ()
 	case "$cmd" in
 	fetch)
 		if [ $lhs = 1 ]; then
-			__gitcomp_nl "$(__git_refs2 "$remote")" "$pfx" "$cur_"
+		    __gitcomp_nl "$(__git_refs2 "$remote")" "$pfx" "$cur_"
 		else
-			__gitcomp_nl "$(__git_refs)" "$pfx" "$cur_"
+		    __gitcomp_nl "$(__git_refs)" "$pfx" "$cur_"
 		fi
 		;;
 	pull|remote)
 		if [ $lhs = 1 ]; then
-			__gitcomp_nl "$(__git_refs "$remote")" "$pfx" "$cur_"
+                    # Manually overriding this remote fetch because it was annoying
+		    __gitcomp_nl "$(__git_refs)" "$pfx" "$cur_"
+		    #__gitcomp_nl "$(__git_refs "$remote")" "$pfx" "$cur_"
 		else
 			__gitcomp_nl "$(__git_refs)" "$pfx" "$cur_"
 		fi
@@ -1709,7 +1711,7 @@ _git_pull ()
 		return
 		;;
 	esac
-	__git_complete_remote_or_refspec
+        __git_complete_remote_or_refspec
 }
 
 _git_push ()
