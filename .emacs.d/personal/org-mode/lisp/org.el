@@ -21169,4 +21169,6 @@ Still experimental, may disappear in the future."
 
 (run-hooks 'org-load-hook)
 
+(setq org-enable-priority-commands t)
+
 ;;; org.el ends here
