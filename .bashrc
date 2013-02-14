@@ -69,8 +69,8 @@ __git_prompt ()
     fi
     PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w${gitstatus}$ "
 }
-alias l="ls -la"
-alias ll="ls -l"
+alias l="ls -la --color"
+alias ll="ls -l --color"
 alias c="clear"
 alias wbrowse="lynx -emacskeys"
 alias google="lynx -emacskeys http://google.ca"
@@ -112,3 +112,5 @@ function count {
 
     ls -la "${folder}" | wc -l
 }
+
+source /etc/bash_completion
