@@ -114,3 +114,4 @@ function count {
 }
 
 source /etc/bash_completion
+export PATH=/root/bin:/usr/local/bin:/root/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/gems/1.8/bin

@@ -1,4 +1,11 @@
-setup
-=====
+#+TITLE: Web Heroes standard configuration files for Debian
 
-Web Heroes standard configuration files for Debian
+* Web Heroes standard configuration files for Debian
+** Macintosh
+   In this repository, run from the command line: ~make mac~
+** Debian
+   In this repository, run from the command line: ~make debian~
+** Forcing emacs modes for files without extensions.
+   Include this line at the top of the file you wish to force an Emacs mode:
+   ( Be sure to comment the line with the appropriate commenting syntax )
+   : -*- mode: <mode name> -*-
