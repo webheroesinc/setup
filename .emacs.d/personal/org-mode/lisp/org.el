@@ -17311,7 +17311,8 @@ BEG and END default to the buffer boundaries."
 (org-defkey org-mode-map "\M-\C-m"  'org-insert-heading)
 (org-defkey org-mode-map "\C-c\C-xc" 'org-clone-subtree-with-time-shift)
 (org-defkey org-mode-map "\C-c\C-xv" 'org-copy-visible)
-(org-defkey org-mode-map [(control return)] 'org-insert-heading-respect-content)
+(org-defkey org-mode-map "\C-c\C-j" 'org-insert-heading-respect-content)
+;; (org-defkey org-mode-map [(control return)] 'org-insert-heading-respect-content)
 (org-defkey org-mode-map [(shift control return)] 'org-insert-todo-heading-respect-content)
 (org-defkey org-mode-map "\C-c\C-x\C-n" 'org-next-link)
 (org-defkey org-mode-map "\C-c\C-x\C-p" 'org-previous-link)
@@ -17360,7 +17361,7 @@ BEG and END default to the buffer boundaries."
 (org-defkey org-mode-map "\C-c\C-x\C-mp"    'org-mobile-push)
 (org-defkey org-mode-map "\C-c@" 'org-mark-subtree)
 (org-defkey org-mode-map [?\C-c (control ?*)] 'org-list-make-subtree)
-;;(org-defkey org-mode-map [?\C-c (control ?-)] 'org-list-make-list-from-subtree)
+(org-defkey org-mode-map [?\C-c (control ?-)] 'org-list-make-list-from-subtree)
 
 (org-defkey org-mode-map "\C-c\C-x\C-k" 'org-mark-entry-for-agenda-action)
 (org-defkey org-mode-map "\C-c\C-x\C-w" 'org-cut-special)
@@ -21170,5 +21171,7 @@ Still experimental, may disappear in the future."
 (run-hooks 'org-load-hook)
 
 (setq org-enable-priority-commands t)
+
+(setq org-insert-heading-respect-content)
 
 ;;; org.el ends here
