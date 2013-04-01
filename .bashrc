@@ -82,6 +82,7 @@ alias lanner5="ssh brisebom@rtu-devel-lanner5"
 alias cyctforg="ssh cyctforg@cyctf.org"
 alias agfinity="ssh agfinity@agfinity.com"
 alias gg="git grep -inC 3 --color"
+alias gd="git diff --color"
 
 function chrome-sudo-agent {
     agent="${1}";

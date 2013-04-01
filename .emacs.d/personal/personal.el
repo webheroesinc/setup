@@ -43,3 +43,6 @@
   (interactive)
   (shell-command
    (concat ditaa-cmd " " buffer-file-name)))
+
+;; string color
+(set-face-foreground 'font-lock-string-face "white")
