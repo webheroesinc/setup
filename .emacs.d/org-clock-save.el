@@ -1,2 +1,1 @@
-;; org-persist.el - cybertron at <2013-02-08 Fri 23:33>
-(setq stored-clock-history '(                        ))
+;; org-persist.el - cybertron-mini at <2013-08-26 Mon 09:08>

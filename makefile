@@ -2,16 +2,30 @@
 .SILENT:	debian mac 
 .PHONY:		debian mac hosts
 
-debian:
-	test ! -f ~/.screenrc			&& ln -s ~/setup/.screenrc		~/ || echo "Already exists: ~/.screenrc"
-	test ! -f ~/.bashrc			&& ln -s ~/setup/.bashrc		~/ || echo "Already exists: ~/.bashrc"
-	test ! -f ~/.git-completion.bash	&& ln -s ~/setup/.git-completion.bash	~/ || echo "Already exists: ~/.git-completion.bash"
-	test ! -d ~/.emacs.d			&& ln -s ~/setup/.emacs.d		~/ || echo "Already exists: ~/.emacs.d"
-mac:
-	test ! -f ~/.screenrc			&& ln -s ~/setup/.screenrc		~/ || echo "Already exists: ~/.screenrc"
-	test ! -f ~/.bash_profile		&& ln -s ~/setup/.bashrc.mac ~/.bash_profile || echo "Already exists: ~/.bash_profile"
-	test ! -f ~/.git-completion.bash	&& ln -s ~/setup/.git-completion.bash	~/ || echo "Already exists: ~/.git-completion.bash"
-	test ! -d ~/.emacs.d			&& ln -s ~/setup/.emacs.d		~/ || echo "Already exists: ~/.emacs.d"
+default:	debian
+
+pwd			= $(shell pwd)
+bashrc			= $(HOME)/.bashrc
+bash_profile		= $(HOME)/.bash_profile
+screenrc		= $(HOME)/.screenrc
+emacsd			= $(HOME)/.emacs.d
+git_completion		= $(HOME)/.git-completion.bash
+
+debian:		$(bashrc) $(screenrc) $(emacsd) $(git_completion)
+	echo "Done"
+mac:		$(bash_profile) $(screenrc) $(emacsd) $(git_completion)
+	echo "Done"
+
+$(screenrc):
+	ln -s $(pwd)/.screenrc $@
+$(bashrc):
+	ln -s $(pwd)/.bashrc $@
+$(bash_profile):
+	ln -s $(pwd)/.bash_profile $@
+$(emacsd):
+	ln -s $(pwd)/.emacs.d $@
+$(git_completion):
+	ln -s $(pwd)/.git-completion.bash $@
 
 hosts:
 	cat ./hosts >> /etc/hosts

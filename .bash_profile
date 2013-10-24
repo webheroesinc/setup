@@ -14,7 +14,7 @@ fi
 # this!
 umask 002
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 
 export EDITOR=emacs
