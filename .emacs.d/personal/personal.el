@@ -19,7 +19,7 @@
 
 (disable-theme 'zenburn)
 
-(setq-default fill-column 80)
+(setq-default fill-column 100)
 
 ;; truncate lines by default
 (setq-default truncate-lines t)
