@@ -22,6 +22,7 @@ $(bashrc):
 	ln -s $(pwd)/.bashrc $@
 $(bash_profile):
 	ln -s $(pwd)/.bash_profile $@
+	ln -s $(pwd)/.bash_profile $(bashrc)
 $(emacsd):
 	ln -s $(pwd)/.emacs.d $@
 $(git_completion):
