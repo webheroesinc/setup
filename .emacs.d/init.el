@@ -92,6 +92,7 @@ by Prelude.")
 (require 'prelude-ack)
 (require 'prelude-erc)
 
+
 ;; config changes made through the customize UI will be store here
 (setq custom-file (concat prelude-personal-dir "custom.el"))
 
@@ -101,5 +102,21 @@ by Prelude.")
 
 (message "Emacs Prelude is ready to do thy bidding, Master %s!"
          (getenv "USER"))
+
+
+(setq jabber-account-list
+      '(("matthew@brisebois.biz"
+         (:network-server . "talk.google.com")
+         (:connection-type . ssl))
+        ("matthew@webheroes.ca"
+         (:network-server . "talk.google.com")
+         (:connection-type . ssl))))
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize)
 
 ;;; init.el ends here

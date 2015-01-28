@@ -1,1 +1,1 @@
-;; org-persist.el - cybertron-mini at <2013-08-26 Mon 09:08>
+;; org-persist.el - debian-8-amd64.vagrantup.com at <2014-09-25 Thu 16:28>
