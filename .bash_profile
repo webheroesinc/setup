@@ -22,6 +22,7 @@ export EDITOR=emacs
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto"
+export VAGRANT_DEFAULT_PROVIDER="virtualbox"
 
 source ~/.git-completion.bash
 if (( $? )); then
@@ -115,7 +116,13 @@ alias cyctforg="ssh cyctforg@cyctf.org"
 alias agfinity="ssh agfinity@agfinity.com"
 alias gg="git grep -inC 3 --color"
 alias gd="git diff --color"
+alias emacs='emacs -nw'
+alias sudoemacs='sudo emacs -nw'
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
+alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
 
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad

@@ -17,16 +17,16 @@ mac:		$(bash_profile) $(screenrc) $(emacsd) $(git_completion)
 	echo "Done"
 
 $(screenrc):
-	ln -s $(pwd)/.screenrc $@
+	ln -s "$(pwd)"/.screenrc $@
 $(bashrc):
-	ln -s $(pwd)/.bashrc $@
+	ln -s "$(pwd)"/.bashrc $@
 $(bash_profile):
-	ln -s $(pwd)/.bash_profile $@
-	ln -s $(pwd)/.bash_profile $(bashrc)
+	ln -s "$(pwd)"/.bash_profile $@
+	ln -s "$(pwd)"/.bash_profile $(bashrc)
 $(emacsd):
-	ln -s $(pwd)/.emacs.d $@
+	ln -s "$(pwd)"/.emacs.d $@
 $(git_completion):
-	ln -s $(pwd)/.git-completion.bash $@
+	ln -s "$(pwd)"/.git-completion.bash $@
 
 hosts:
 	cat ./hosts >> /etc/hosts
