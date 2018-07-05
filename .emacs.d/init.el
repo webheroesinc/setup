@@ -32,9 +32,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(css-indent-offset 2)
+ '(package-selected-packages (quote (multi-web-mode yasnippet multiple-cursors ac-html)))
  '(sgml-basic-offset 4)
  '(truncate-lines t)
- '(yas-prompt-functions (quote (yas-dropdown-prompt) ) ) )
+ '(yas-prompt-functions (quote (yas-dropdown-prompt))))
 
 (put 'downcase-region 'disabled nil)
 (custom-set-faces

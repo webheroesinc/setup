@@ -4,7 +4,6 @@
 
 default:	debian
 
-pwd			= $(shell pwd)
 bashrc			= $(HOME)/.bashrc
 bash_profile		= $(HOME)/.bash_profile
 screenrc		= $(HOME)/.screenrc
@@ -17,16 +16,19 @@ mac:		$(bash_profile) $(screenrc) $(emacsd) $(git_completion)
 	echo "Done"
 
 $(screenrc):
-	ln -s "$(pwd)"/.screenrc $@
+	rsync -va .screenrc $@
 $(bashrc):
-	ln -s "$(pwd)"/.bashrc $@
+	rsync -va .bashrc $@
 $(bash_profile):
-	ln -s "$(pwd)"/.bash_profile $@
-	ln -s "$(pwd)"/.bash_profile $(bashrc)
+	rsync -va .bash_profile $@
+	rsync -va .bash_profile $(bashrc)
 $(emacsd):
-	ln -s "$(pwd)"/.emacs.d $@
+	rsync -va .emacs.d/ $@
 $(git_completion):
-	ln -s "$(pwd)"/.git-completion.bash $@
+	rsync -va .git-completion.bash $@
+
+clean:
+	rm $(bash_profile) $(screenrc) $(emacsd) $(git_completion)
 
 hosts:
 	cat ./hosts >> /etc/hosts
